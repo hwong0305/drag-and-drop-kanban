@@ -70,6 +70,14 @@ const Board = props => {
         <textarea
           value={message}
           onChange={e => setMessage(e.target.value)}
+          onKeyDown={e => {
+            if (e.keyCode === 13) {
+              const messages = [...props.todos];
+              messages.push(message);
+              setMessage('');
+              props.setTodos(messages);
+            }
+          }}
         ></textarea>
         <button
           type="button"

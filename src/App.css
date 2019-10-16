@@ -21,12 +21,13 @@ li {
   padding: 0.25rem;
 }
 
-.item {
+.item:not(:last-child) {
   margin-bottom: 5px;
 }
 
 footer {
   width: 100%;
+  min-height: 60px;
   height: 30%;
   display: flex;
   border: solid 1px black;
@@ -35,17 +36,22 @@ footer {
 textarea {
   width: 70%;
   resize: vertical;
+  padding: 5px;
 }
 
 .submit-button {
   width: 30%;
+  border: solid 1px black;
 }
 
 .board-header {
   color: white;
   text-align: center;
   font-weight: bold;
-  height: 1.4rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .kanban {
