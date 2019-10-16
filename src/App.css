@@ -62,18 +62,18 @@ textarea {
   margin-right: 30px;
 }
 
-#toDo {
+#ToDo {
   background: #35235d;
 }
 
-#doing {
+#Doing {
   background: #cb2402;
 }
 
-#done {
+#Done {
   background: #4c49a2;
 }
 
-#approved {
+#Approved {
   background: #a31a48;
 }

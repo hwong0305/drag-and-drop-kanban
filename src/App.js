@@ -7,23 +7,23 @@ import reorder from './reorder';
 
 const App = () => {
   const [todoMap, setTodoMap] = useState({
-    toDo: [],
-    doing: [],
-    done: [],
-    approved: [],
+    ToDo: [],
+    Doing: [],
+    Done: [],
+    Approved: [],
   });
 
   const setTodos = update => {
-    setTodoMap({ ...todoMap, toDo: update });
+    setTodoMap({ ...todoMap, ToDo: update });
   };
   const setDoing = update => {
-    setTodoMap({ ...todoMap, doing: update });
+    setTodoMap({ ...todoMap, Doing: update });
   };
   const setDone = update => {
-    setTodoMap({ ...todoMap, done: update });
+    setTodoMap({ ...todoMap, Done: update });
   };
   const setApproved = update => {
-    setTodoMap({ ...todoMap, approved: update });
+    setTodoMap({ ...todoMap, Approved: update });
   };
 
   const setFunctions = [setTodos, setDoing, setDone, setApproved];
