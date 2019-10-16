@@ -69,13 +69,18 @@ const Board = props => {
       <footer>
         <textarea
           value={message}
+          rows="1"
+          type="text"
           onChange={e => setMessage(e.target.value)}
           onKeyDown={e => {
-            if (e.keyCode === 13) {
+            if (e.key === 'Enter' && e.shiftKey === false) {
+              e.preventDefault();
+              if (message === '') return;
               const messages = [...props.todos];
               messages.push(message);
-              setMessage('');
               props.setTodos(messages);
+              setMessage('');
+              return false;
             }
           }}
         ></textarea>
@@ -83,6 +88,7 @@ const Board = props => {
           type="button"
           className="submit-button"
           onClick={() => {
+            if (message === '') return;
             const messages = [...props.todos];
             messages.push(message);
             setMessage('');
