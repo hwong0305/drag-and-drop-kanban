@@ -15,7 +15,7 @@ const Board = props => {
             droppableId={listId}
             type={listType}
             direction="vertical"
-            isCombineEnabled={true}
+            isCombineEnabled={false}
           >
             {dropProvided => (
               <div {...dropProvided.droppableProps}>
