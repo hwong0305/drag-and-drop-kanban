@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import './App.css';
 
@@ -6,12 +6,14 @@ import Board from './Components/Board';
 import reorder from './reorder';
 
 const App = () => {
-  const [todoMap, setTodoMap] = useState({
-    ToDo: [],
-    Doing: [],
-    Done: [],
-    Approved: [],
-  });
+  const [todoMap, setTodoMap] = useState(
+    JSON.parse(localStorage.getItem('kanban')) || {
+      ToDo: [],
+      Doing: [],
+      Done: [],
+      Approved: [],
+    }
+  );
 
   const setTodos = update => {
     setTodoMap({ ...todoMap, ToDo: update });
@@ -34,6 +36,10 @@ const App = () => {
     if (!destination) return;
     setTodoMap(reorder(todoMap, source, destination));
   };
+
+  useEffect(() => {
+    localStorage.setItem('kanban', JSON.stringify(todoMap));
+  });
 
   return (
     <div className="container">
